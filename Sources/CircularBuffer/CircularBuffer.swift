@@ -5,7 +5,7 @@ import CoreImage
 
 
 
-public struct CircleBuffer<Element> {
+public struct CircularBuffer<Element> {
     private var data: [Element?]
     private var head: Int = 0
     private var tail: Int = 0

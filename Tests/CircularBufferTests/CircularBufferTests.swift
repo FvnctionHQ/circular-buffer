@@ -7,7 +7,7 @@ final class CircularBufferTests: XCTestCase {
     
     func testThatBufferKeepsSize() throws {
         
-        var buff = CircleBuffer<Int>(count: 10)
+        var buff = CircularBuffer<Int>(count: 10)
         
         for i in 0...20 {
            _ = buff.enqueue(i)
@@ -19,7 +19,7 @@ final class CircularBufferTests: XCTestCase {
     
     func testThatBufferHasNoNilElements() throws {
         
-        var buff = CircleBuffer<Int>(count: 10)
+        var buff = CircularBuffer<Int>(count: 10)
         
         for i in 0...100 {
            _ = buff.enqueue(i)
@@ -31,7 +31,7 @@ final class CircularBufferTests: XCTestCase {
     
     func testThatBufferReturnsMiddleElement() throws {
         
-        var buff = CircleBuffer<Int>(count: 10)
+        var buff = CircularBuffer<Int>(count: 10)
         
         for i in 0...50 {
            _ = buff.enqueue(i)
@@ -47,7 +47,7 @@ final class CircularBufferTests: XCTestCase {
     
     func testThatBufferReturnsElementsAroundIndex() throws {
         
-        var buff = CircleBuffer<Int>(count: 10)
+        var buff = CircularBuffer<Int>(count: 10)
         
         for i in 0...50 {
            _ = buff.enqueue(i)

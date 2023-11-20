@@ -9,6 +9,12 @@ public struct CircularBuffer<Element> {
     private var data: [Element?]
     private var head: Int = 0
     private var tail: Int = 0
+    
+    var isHydrated: Bool {
+        data.allSatisfy { el in
+            el != nil
+        }
+    }
 
     public init(count: Int) {
         data = [Element?](repeating: nil, count: count)

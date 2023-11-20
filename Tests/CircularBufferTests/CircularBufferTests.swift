@@ -3,7 +3,27 @@ import XCTest
 
 final class CircularBufferTests: XCTestCase {
     
-    
+
+    func testThatBufferReportHydration() throws {
+        
+        var buff = CircularBuffer<Int>(count: 10)
+        
+        for i in 0...20 {
+            if buff.isHydrated {
+                XCTAssert(buff.elements().allSatisfy({ el in
+                    el != nil
+                }))
+            }
+            
+            if !buff.isHydrated {
+                XCTAssert(!buff.elements().allSatisfy({ el in
+                    el != nil
+                }))
+            }
+           _ = buff.enqueue(i)
+        }
+        
+    }
     
     func testThatBufferKeepsSize() throws {
         

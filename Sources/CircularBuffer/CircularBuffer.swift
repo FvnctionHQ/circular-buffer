@@ -10,7 +10,7 @@ public struct CircularBuffer<Element> {
     private var head: Int = 0
     private var tail: Int = 0
     
-    var isHydrated: Bool {
+    public var isHydrated: Bool {
         data.allSatisfy { el in
             el != nil
         }
